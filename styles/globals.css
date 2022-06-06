@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .nav {
+    @apply py-2 transition duration-200 ease-out cursor-pointer md:py-0 border-borderCol text-titleCol hover:text-pryCol;
+  }
+}
