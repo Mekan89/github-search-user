@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import { useEffect, useRef } from "react";
-import { useRecoilState, useSetRecoilState } from "recoil";
-import { menuState, searchState } from "../atoms/state";
+import { useRef } from "react";
+import { useRecoilState } from "recoil";
+import { menuState } from "../atoms/state";
 import arrowDown from "../public/caret-down-outline.svg";
 import githubIcon from "../public/github.svg";
 import hamburgerIcon from "../public/hamburger.svg";
@@ -13,15 +13,10 @@ import TopBarItem from "./TopBarItem";
 
 const TopBar = () => {
   // const [query, setQuery] = useState("");
-  const setSearch = useSetRecoilState(searchState);
+
   // const users = useRecoilValue(fetchUsers);
   const menuButton = useRef<HTMLUListElement>(null);
   const [toggle, setToggle] = useRecoilState<boolean>(menuState);
-  const searchInputRef = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    searchInputRef.current?.focus();
-  }, []);
 
   // const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
   //   const { value } = e.target;
@@ -47,23 +42,6 @@ const TopBar = () => {
           className={`items-center justify-start order-last w-full mt-4 space-x-3 divide-y md:w-9/12 md:mt-0 md:flex md:divide-none md:order-none ${
             toggle ? "block" : "hidden"
           }`}>
-          <li className="md:w-60">
-            <input
-              ref={searchInputRef}
-              autoComplete="off"
-              className="w-full px-2 py-1 mb-2  rounded-md bg-[#1b1d23] border-none ring-1 font-light ring-borderCol hover:ring-[#316dca] focus:ring-[#316dca]  text-titleCol md:mb-0 focus:outline-none ring-inset"
-              type="text"
-              name="search"
-              onChange={e => setSearch(e.target.value)}
-              // onKeyDown={(event) => {
-              //   if (event.key === "Enter") {
-              //     setUserToFetch(user);
-              //     setRepoFilterState("");
-              //   }
-              // }}
-              placeholder="Search or jump to"
-            />
-          </li>
           <TopBarItem title="Dashboard" hidden />
           <TopBarItem title="Issues" />
           <TopBarItem title="Pulls" />

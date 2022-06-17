@@ -13,4 +13,7 @@
   .nav {
     @apply py-2 transition duration-200 ease-out cursor-pointer md:py-0 border-borderCol text-titleCol hover:text-pryCol;
   }
+  .footer {
+    @apply mx-1 md:mx-6 lg:ml-0 hover:text-pryCol;
+  }
 }

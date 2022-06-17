@@ -1,18 +1,5 @@
-export interface IPropState {
-  avatar_url?: string;
-  followers_url?: string;
-  following_url?: string;
-  html_url?: string;
-  id?: number;
-  login?: string;
-  node_id?: string;
-  repos_url?: string;
-  score?: number;
-  starred_url?: string;
-  url?: string;
-}
-
 export interface IUserProps {
+  id: number;
   avatar_url: string | null;
   name: string | null;
   login?: string;
@@ -32,4 +19,5 @@ export interface IReposProps {
   language: string;
   visibility: string;
   id: number;
+  html_url: string;
 }

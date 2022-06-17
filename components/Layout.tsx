@@ -1,24 +1,22 @@
 import Head from "next/head";
+import Footer from "./Footer";
 import Header from "./Header";
 
-const Layout = ({ title = "Github Clone", children }: { title?: string; children: JSX.Element }) => {
-  // const { pathname } = useRouter();
-
+const Layout = ({ title = "Github Clone", children }: { title?: string; children: JSX.Element | JSX.Element[] }) => {
   return (
-    <div className="container px-2 py-2">
+    <>
       <Head>
         <title>{title}</title>
         <meta name="description" content="Github clone with Nextjs and Tailwind" />
-        <link rel="icon" href="/img/github.svg" />
+        <link rel="icon" href="/github.svg" />
       </Head>
 
-      <Header />
-
-      {/* {pathname === "/" && <Showcase />} */}
-
-      <main>{children}</main>
-      {/* <Footer /> */}
-    </div>
+      <div className="container flex flex-col h-screen p-2 md:px-3 md:pt-3 lg:max-w-5xl">
+        <Header />
+        <main className="flex-grow">{children}</main>
+        <Footer />
+      </div>
+    </>
   );
 };
 
