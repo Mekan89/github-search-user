@@ -42,7 +42,7 @@ const Home: NextPage = () => {
         <SearchIcon height={20} className="mr-2" />
       </div>
       <div className="my-10 text-pryCol xs:bg-navCol"></div>
-      <div className="grid grid-cols-1 gap-x-4 gap-y-9 md:grid-cols-3 lg:grid-cols-4">
+      <div className="grid gap-x-4 gap-y-9 md:grid-cols-3 lg:grid-cols-4">
         {users?.items?.map((user: IUserProps) => (
           <UserCard key={user.id} {...user} />
         ))}

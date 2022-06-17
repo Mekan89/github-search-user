@@ -14,7 +14,7 @@ const UserCard = ({ avatar_url, login }: IUserProps) => {
   };
 
   return (
-    <div className="p-4 overflow-hidden text-center rounded-lg shadow-md cursor-pointer hover:shadow-borderCol ring-1 ring-borderCol">
+    <div className="p-4 mx-10 overflow-hidden text-center rounded-lg shadow-md cursor-pointer md:mx-0 md:max-w-full hover:shadow-borderCol ring-1 ring-borderCol">
       <div className="w-24 h-24 mx-auto overflow-hidden align-middle border-2 border-white border-solid rounded-full">
         <Image src={avatar_url!} alt="image" width={100} height={100} objectFit="cover" />
       </div>
