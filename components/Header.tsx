@@ -4,14 +4,14 @@ import { menuState } from "../atoms/state";
 import BottomBar from "./BottomBar";
 import TopBar from "./TopBar";
 
-const Navbar: React.FC = () => {
+const Header: React.FC = () => {
   const toggle = useRecoilValue(menuState);
   return (
-    <nav className="container px-2 pt-4">
+    <nav>
       <TopBar />
       {!toggle && <BottomBar />}
     </nav>
   );
 };
 
-export default Navbar;
+export default Header;

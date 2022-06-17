@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply dark:bg-bgCol dark:text-titleCol;
+    @apply min-h-screen;
+  }
+}
+
 @layer components {
   .nav {
     @apply py-2 transition duration-200 ease-out cursor-pointer md:py-0 border-borderCol text-titleCol hover:text-pryCol;

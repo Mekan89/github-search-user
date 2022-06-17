@@ -11,7 +11,10 @@ module.exports = {
         pryCol: "#758390",
         borderCol: "#454c56",
       },
+      fontFamily: {
+        sans: ["Graphik", "sans-serif"],
+      },
     },
+    plugins: [],
   },
-  plugins: [],
 };
