@@ -2,7 +2,7 @@ import github from "../public/github.svg";
 
 const Footer = () => {
   return (
-    <footer className="mt-8">
+    <footer className="mt-8 sticky top-[100vh]">
       <ul className="flex flex-wrap py-8 border-t border-solid justify-evenly border-borderCol ">
         <div className="flex flex-wrap justify-center w-full mb-3 text-xs lg:justify-items-start lg:w-auto">
           <li className="mx-1 md:mx-4 text-pryCol lg:ml-0">&copy; {new Date().getFullYear()} GitHub, Inc</li>

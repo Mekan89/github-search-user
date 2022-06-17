@@ -11,9 +11,9 @@ const Layout = ({ title = "Github Clone", children }: { title?: string; children
         <link rel="icon" href="/github.svg" />
       </Head>
 
-      <div className="container flex flex-col h-screen p-2 md:px-3 md:pt-3 lg:max-w-5xl">
+      <div className="container min-h-screen p-2 md:px-3 md:pt-3 lg:max-w-5xl">
         <Header />
-        <main className="flex-grow">{children}</main>
+        <main>{children}</main>
         <Footer />
       </div>
     </>
