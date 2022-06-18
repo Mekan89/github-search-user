@@ -1,7 +1,9 @@
 import { SearchIcon } from "@heroicons/react/outline";
 import type { NextPage } from "next";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
+import { useRecoilState } from "recoil";
 import useSWR from "swr";
+import { searchState } from "../atoms/state";
 import Layout from "../components/Layout";
 import UserCard from "../components/UserCard";
 import { IUserProps } from "../ts-types/types";
@@ -11,7 +13,7 @@ export const fetcher = (url: string) => fetch(url).then(res => res.json());
 
 const Home: NextPage = () => {
   const searchInputRef = useRef<HTMLInputElement>(null);
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useRecoilState(searchState);
 
   useEffect(() => {
     searchInputRef.current?.focus();
@@ -29,13 +31,14 @@ const Home: NextPage = () => {
       <h1 className="mt-10 text-2xl font-bold text-center md:text-left text-titleCol">
         {debounce ? `Search results for: ${debounce}` : "Search for Github Users"}
       </h1>
-      <div className="flex items-center bg-[#1b1d23] max-w-[30rem]  overflow-hidden rounded-md border border-borderCol text-titleCol my-5 mx-auto md:mx-0  focus-within:border-[#316dca]">
+      <div className="flex items-center bg-[#1b1d23] max-w-[30rem]  overflow-hidden rounded-md border border-borderCol text-titleCol my-5 mx-auto md:mx-0  focus-within:border-[#689ef2]">
         <input
           ref={searchInputRef}
           autoComplete="off"
           className="w-full px-2 py-2 text-sm font-light bg-transparent border-none focus:outline-none"
           type="text"
           name="search"
+          value={query}
           onChange={e => setQuery(e.target.value)}
           placeholder="Search or jump to"
         />

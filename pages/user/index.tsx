@@ -21,11 +21,12 @@ const User = () => {
         <div className="flex flex-col md:flex-row">
           <Profile {...user} />
           <div className="flex-1">
-            <div className="bg-[#32363f] px-3 rounded-md">
-              <span className="flex items-center gap-2 py-3 border-b-2 border-linkCol w-max">
+            <div className="border-b-2 border-b-[#32363f] px-3 rounded-md">
+              <p className="flex items-center gap-2 py-3 border-b-2 border-linkCol w-max">
                 <img src={reposIcon.src} alt="reposIcon" className="w-5 h-5" />
                 Repositories
-              </span>
+                <span className="px-2 text-sm bg-[#32363f] rounded-full">{repos?.length}</span>
+              </p>
             </div>
             <div className="grid gap-3 mt-5 md:grid-cols-2">
               {repos?.map((repo: IReposProps) => (

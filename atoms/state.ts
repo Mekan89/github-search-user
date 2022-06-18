@@ -5,6 +5,11 @@ export const menuState = atom({
   default: false,
 });
 
+export const searchState = atom({
+  key: "searchState",
+  default: "",
+});
+
 export const usersState = atom({
   key: "usersState",
   default: [],

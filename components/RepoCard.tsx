@@ -12,13 +12,13 @@ const RepoCard = ({ name, description, url, forks, watchers, language, visibilit
   };
 
   return (
-    <a href={html_url} target="_blank" rel="noopener noreferrer" className="transition duration-150  hover:scale-105">
-      <div className="bg-[#32363f] space-y-3 rounded-md p-3  flex flex-col justify-between cursor-pointer min-h-[130px]">
+    <a href={html_url} target="_blank" rel="noopener noreferrer" className="transition duration-150">
+      <div className="border border-[#32363f] space-y-3 rounded-md p-3  flex flex-col justify-between cursor-pointer min-h-[130px]">
         <div className="flex items-center justify-between">
-          <span className="truncate">{name}</span>
+          <span className="truncate text-[#689ef2] hover:underline">{name}</span>
           <span className="px-2 py-[2px] text-xs border rounded-full border-pryCol text-pryCol">{visibility}</span>
         </div>
-        <p className="text-sm text-pryCol line-clamp-2">{description}</p>
+        <p className="text-xs text-pryCol line-clamp-2">{description}</p>
 
         <div className="flex gap-3 ">
           {language && (
